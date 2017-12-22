@@ -1,1 +1,1 @@
-# womanlymag-new
+# Womanly Mag
