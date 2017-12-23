@@ -23,9 +23,19 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "precommit": "lint-staged && npm test",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*.js": [
+        "yarn format",
+        "git add"
+    ]
   },
   "devDependencies": {
+    "husky": "^0.14.3",
+    "jest": "^22.0.4",
+    "lint-staged": "^6.0.0",
     "prettier": "^1.9.2"
   }
 }
