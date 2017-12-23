@@ -3,11 +3,6 @@
   "description": "Womanly Mag",
   "version": "0.0.1",
   "author": "Rae Farine <rfarine1027@gmail.com>",
-  "dependencies": {
-    "gatsby": "^1.9.145",
-    "gatsby-link": "^1.6.32",
-    "gatsby-plugin-react-helmet": "^1.0.8"
-  },
   "keywords": [
     "gatsby",
     "womanly",
@@ -22,15 +17,21 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "format": "prettier --trailing-comma es5 --single-quote --write '{./,__{tests}__}/**/*.+(js|jsx)'",
     "precommit": "lint-staged && npm test",
-    "test": "jest"
+    "test": "jest",
+    "tdd": "jest --watchAll"
   },
   "lint-staged": {
     "*.js": [
         "yarn format",
         "git add"
     ]
+  },
+  "dependencies": {
+    "gatsby": "^1.9.145",
+    "gatsby-link": "^1.6.32",
+    "gatsby-plugin-react-helmet": "^1.0.8"
   },
   "devDependencies": {
     "husky": "^0.14.3",

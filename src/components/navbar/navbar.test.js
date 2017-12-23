@@ -1,3 +1,3 @@
 test('this needs to be prettier.', () => {
-  expect(4).toBe(4)
-})
+  expect(4).toBe(4);
+});
