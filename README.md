@@ -1,9 +1,15 @@
 # Womanly Mag
 [![Build Status](https://travis-ci.org/rfarine/womanlymag-new.svg?branch=master)](https://travis-ci.org/rfarine/womanlymag-new)
 
-## Develop
+## Setup
 
-Is Yarn installed? `npm install yarn --global`
+1) Clone this repo!
+
+2) Install Yarn: `npm install yarn --global`
+
+3) Create a `.env` file in the root directory and grab your environment variables from a fellow dev. All variables included in `.env.example` are required. Staging/production builds will fail if these environment variables are not included in Netlify. So, if you ever add a required environment variable, make sure you add it to Netlify!
+
+## Develop
 
 Run `yarn develop`.
 

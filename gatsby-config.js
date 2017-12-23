@@ -8,6 +8,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-source-contentful',
       options: {
@@ -16,5 +17,14 @@ module.exports = {
         host: !isProduction ? 'preview.contentful.com' : 'cdn.contentful.com',
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-105571821-1',
+        // TODO: Will need this when i18n enabled:
+        // anonymize: true,
+      },
+    },
+    'gatsby-plugin-netlify', // Important: make sure to put last in the array
   ],
 };
