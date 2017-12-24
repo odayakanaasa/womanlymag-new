@@ -21,17 +21,24 @@ If you'd like to see the GraphQL schema, check out `http://localhost:8000/___gra
 
 ## Code Quality
 
-### Testing
+When committing code, we use [Husky](https://github.com/typicode/husky) pre-commit hooks to run:
+1) `yarn lint` to lint our code (see "ESLint" section below)
+2) `yarn format` (see "Prettier" section below)
+3) `yarn test` to run all tests (see "Jest" section below)
 
-We use [Jest](https://facebook.github.io/jest/) to test our components.
+### ESLint
 
-When developing, it's best to run `yarn tdd` (continuous test runs) in one pane alongside your dev server. TDD, babay. Make sure to keep writing tests as you add components/pages.
-
-When committing code, we use [Husky](https://github.com/typicode/husky) pre-commit hooks to run `yarn test` (a single test run) as well as `yarn format` (more on that in the following section.)
+We use [ESLint](https://eslint.org/) to adhere to certain code style guidelines. We're extending [Airbnb's ESLint config](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb).
 
 ### Prettier
 
 We use [Prettier](https://github.com/prettier/prettier) to create consistently formatted code. As mentioned above, it's automatically run when committing, but if you're curious and want to see it in action, run `yarn format`.
+
+### Jest
+
+We use [Jest](https://facebook.github.io/jest/) to test our components.
+
+When developing, it's best to run `yarn tdd` (continuous test runs) in one pane alongside your dev server. TDD, babay. Make sure to keep writing tests as you add components/pages.
 
 ### Greenkeeper
 
