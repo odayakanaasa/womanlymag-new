@@ -33,6 +33,10 @@ When committing code, we use [Husky](https://github.com/typicode/husky) pre-comm
 
 We use [Prettier](https://github.com/prettier/prettier) to create consistently formatted code. As mentioned above, it's automatically run when committing, but if you're curious and want to see it in action, run `yarn format`.
 
+### Greenkeeper
+
+We use [Greenkeeper.io](https://greenkeeper.io/) to manage our out-of-date dependencies. When Greenkeeper finds a dependency that's out of date, it automatically creates a PR that updates it. Pretty cool, huh?
+
 ## Deploy to Staging
 
 Coming soon.
