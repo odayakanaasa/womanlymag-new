@@ -34,9 +34,9 @@ We use [ESLint](https://eslint.org/) to adhere to certain code style guidelines.
 
 We use [Prettier](https://github.com/prettier/prettier) to create consistently formatted code. As mentioned above, it's automatically run when committing, but if you're curious and want to see it in action, run `yarn format`.
 
-### Jest
+### Jest & Enzyme
 
-We use [Jest](https://facebook.github.io/jest/) to test our components.
+We use [Jest](https://facebook.github.io/jest/) as our testing framework and [Enzyme](http://airbnb.io/enzyme/index.html) as our testing utility.
 
 When developing, it's best to run `yarn tdd` (continuous test runs) in one pane alongside your dev server. TDD, babay. Make sure to keep writing tests as you add components/pages.
 

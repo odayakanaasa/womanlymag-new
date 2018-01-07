@@ -1,9 +1,10 @@
 {
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
-  "extends": ["airbnb", "prettier", "prettier/react"],
+  "extends": ["airbnb", "prettier", "prettier/react", "plugin:jest/recommended"],
   "parserOptions": {
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
@@ -15,7 +16,8 @@
   "rules": {
     "import/no-extraneous-dependencies": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "react/jsx-filename-extension": "off"
   },
   "globals": {
     "graphql": true
