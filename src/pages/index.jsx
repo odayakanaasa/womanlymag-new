@@ -1,5 +1,41 @@
 import React from 'react';
 
-const IndexPage = () => <div>Hello, world.</div>;
+const IndexPage = ({ data }) => {
+  const usEdges = data.us.edges;
+
+  return <div>Home...{usEdges[0].node.id}</div>;
+};
 
 export default IndexPage;
+
+export const pageQuery = graphql`
+  query homePageQuery {
+    us: allContentfulPage(
+      filter: { node_locale: { eq: "en-US" }, slug: { eq: "index" } }
+    ) {
+      edges {
+        node {
+          id
+          content {
+            ... on ContentfulHero {
+              title
+              media {
+                file {
+                  url
+                }
+              }
+            }
+            ... on ContentfulIssue {
+              title
+              featured
+              articles {
+                title
+                slug
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
