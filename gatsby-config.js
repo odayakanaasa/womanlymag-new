@@ -7,6 +7,8 @@ module.exports = {
     title: 'Womanly Mag',
   },
   plugins: [
+    'gatsby-plugin-resolve-src',
+    'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-remark',
     {
@@ -23,6 +25,12 @@ module.exports = {
         trackingId: 'UA-105571821-1',
         // TODO: Will need this when i18n enabled:
         // anonymize: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: ['Yantramanav:100,400,700,900'],
       },
     },
     'gatsby-plugin-netlify', // Important: make sure to put last in the array

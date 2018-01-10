@@ -3,9 +3,9 @@ import { shallow } from 'enzyme';
 import NavBar from './navbar';
 
 describe('NavBar', () => {
-  it('should render', () => {
-    const wrapper = shallow(<NavBar />);
+  const wrapper = shallow(<NavBar />);
 
+  it('renders', () => {
     expect(wrapper).toHaveLength(1);
   });
 });

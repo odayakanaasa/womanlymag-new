@@ -3,7 +3,12 @@ import React from 'react';
 const IndexPage = ({ data }) => {
   const usEdges = data.us.edges;
 
-  return <div>Home...{usEdges[0].node.id}</div>;
+  return (
+    <div>
+      <h1>Homepage</h1>
+      <p>Hello hello {usEdges[0].id}</p>
+    </div>
+  );
 };
 
 export default IndexPage;
