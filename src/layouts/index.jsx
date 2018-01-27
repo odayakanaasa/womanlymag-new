@@ -11,8 +11,9 @@ import mainTheme from 'styles/mainTheme';
 injectGlobal`
   ${styledNormalize}
 
-  html, body {
+  html, body, * {
     font-family: 'Yantramanav', sans-serif;
+    font-size: 100%;
   }
 `;
 

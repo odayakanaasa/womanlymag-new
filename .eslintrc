@@ -5,6 +5,7 @@
     "jest": true
   },
   "extends": ["airbnb", "prettier", "prettier/react", "plugin:jest/recommended"],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,

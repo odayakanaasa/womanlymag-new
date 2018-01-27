@@ -5,11 +5,11 @@
 
 ## Setup
 
-1) Clone this repo!
+1. Clone this repo!
 
-2) Install Yarn: `npm install yarn --global`
+2. Install Yarn: `npm install yarn --global`
 
-3) Create a `.env` file in the root directory and grab your environment variables from a fellow dev. All variables included in `.env.example` are required. Staging/production builds will fail if these environment variables are not included in Netlify. So, if you ever add a required environment variable, make sure you add it to Netlify!
+3. Create a `.env` file in the root directory and grab your environment variables from a fellow dev. All variables included in `.env.example` are required. Staging/production builds will fail if these environment variables are not included in Netlify. So, if you ever add a required environment variable, make sure you add it to Netlify!
 
 ## Develop
 
@@ -22,9 +22,10 @@ If you'd like to see the GraphQL schema, check out `http://localhost:8000/___gra
 ## Code Quality
 
 When committing code, we use [Husky](https://github.com/typicode/husky) pre-commit hooks to run:
-1) `yarn lint` to lint our code (see "ESLint" section below)
-2) `yarn format` (see "Prettier" section below)
-3) `yarn test` to run all tests (see "Jest" section below)
+
+1. `yarn lint` to lint our code (see "ESLint" section below)
+2. `yarn format` (see "Prettier" section below)
+3. `yarn test` to run all tests (see "Jest" section below)
 
 ### ESLint
 
@@ -42,7 +43,11 @@ When developing, it's best to run `yarn tdd` (continuous test runs) in one pane 
 
 ### Greenkeeper
 
-We use [Greenkeeper.io](https://greenkeeper.io/) to manage our out-of-date dependencies. When Greenkeeper finds a dependency that's out of date, it automatically creates a PR that updates it. Pretty cool, huh?
+We use [Greenkeeper.io](https://greenkeeper.io/) to manage our out-of-date dependencies. When Greenkeeper finds a dependency that's out of date, it automatically creates a PR that updates it and checks if our build still passes. Pretty cool, huh? **Always notify the Engineering channel when you are about to merge one these PRs...or any PR for that matter.**
+
+### CSS
+
+We use [Styled Components](https://www.styled-components.com/docs) 💅 and [Polished](https://polished.js.org/docs/) ✨ helpers. We're all about the CSS-in-JS approach. Read those docs.
 
 ## Deploy to Staging
 
