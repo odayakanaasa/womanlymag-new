@@ -19,7 +19,8 @@
     "react/prop-types": "off",
     "react/jsx-filename-extension": "off",
     "import/extensions" : ["error", { "jsx": "never" } ],
-    "no-unused-expressions": ["error", { "allowTaggedTemplates": true }]
+    "no-unused-expressions": ["error", { "allowTaggedTemplates": true }],
+    "no-underscore-dangle": "off"
   },
   "globals": {
     "graphql": true

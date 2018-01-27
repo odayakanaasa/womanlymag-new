@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import styled from 'styled-components';
 // eslint-disable-next-line import/no-unresolved
 import TextLink from 'components/textLink/textLink';
@@ -18,24 +19,22 @@ const ListItem = styled.li`
   margin: 0 5px;
 `;
 
+const items = {
+  '/': 'Home',
+  '/about': 'About',
+  '/issues': 'Issues',
+  '/resources': 'Resources',
+  '/glossary': 'Glossary',
+};
+
 const NavBar = () => (
   <Nav>
     <List>
-      <ListItem>
-        <TextLink to="/" text="Home" />
-      </ListItem>
-      <ListItem>
-        <TextLink to="/about" text="About" />
-      </ListItem>
-      <ListItem>
-        <TextLink to="/issues" text="Issues" />
-      </ListItem>
-      <ListItem>
-        <TextLink to="/resources" text="Resources" />
-      </ListItem>
-      <ListItem>
-        <TextLink to="/glossary" text="Glossary" />
-      </ListItem>
+      {_.map(items, (item, key) => (
+        <ListItem key={key}>
+          <TextLink to={key} text={item} />
+        </ListItem>
+      ))}
     </List>
   </Nav>
 );

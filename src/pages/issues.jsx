@@ -1,20 +1,18 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import { Grid, Cell } from 'styled-css-grid';
 
 const IssuesPage = ({ data }) => {
   const usEdges = data.us.edges;
 
   return (
-    <div>
-      Issues...
-      <ul>
-        {usEdges.map(({ node }) => (
-          <li key={node.number}>
-            <Link to={`/issues/${node.number}`}>Issue #{node.number}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Grid columns="repeat(auto-fit,minmax(200px,1fr))">
+      {usEdges.map(({ node }) => (
+        <Cell key={node.number} center middle>
+          <Link to={`/issues/${node.number}`}>Issue #{node.number}</Link>
+        </Cell>
+      ))}
+    </Grid>
   );
 };
 

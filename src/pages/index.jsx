@@ -1,12 +1,25 @@
 import React from 'react';
+import { Grid, Cell } from 'styled-css-grid';
 
 const IndexPage = ({ data }) => {
-  const usEdges = data.us.edges;
+  const usNode = data.us.edges[0].node;
+  const issue = usNode.content.find(el => el.__typename === 'ContentfulIssue');
+  const { articles } = issue;
 
   return (
     <div>
-      <h1>Homepage</h1>
-      <p>Hello hello {usEdges[0].id}</p>
+      <Grid columns={1}>
+        <Cell center middle>
+          Hero goes here.
+        </Cell>
+      </Grid>
+      <Grid columns="repeat(auto-fit,minmax(200px,1fr))">
+        {articles.map(article => (
+          <Cell key={article.slug} center middle>
+            {article.title}
+          </Cell>
+        ))}
+      </Grid>
     </div>
   );
 };

@@ -9401,6 +9401,12 @@ styled-components@^2.4.0:
     stylis "^3.4.0"
     supports-color "^3.2.3"
 
+styled-css-grid@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/styled-css-grid/-/styled-css-grid-0.8.0.tgz#84a498b49062757de30f33302b3c345c0401eb37"
+  dependencies:
+    prop-types "^15.6.0"
+
 styled-normalize@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/styled-normalize/-/styled-normalize-2.2.1.tgz#c93a007c0339a69e3254eeef8cb6a5a96e5ca4eb"

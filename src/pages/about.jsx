@@ -1,9 +1,16 @@
 import React from 'react';
+import { Grid, Cell } from 'styled-css-grid';
 
 const AboutPage = ({ data }) => {
   const usEdges = data.us.edges;
 
-  return <div>About... {usEdges[0].node.id}</div>;
+  return (
+    <Grid columns="2fr 1fr" areas={['text form form', 'bios bios bios']}>
+      <Cell area="text">About us text... {usEdges[0].node.id}</Cell>
+      <Cell area="form">Form</Cell>
+      <Cell area="bios">Bios</Cell>
+    </Grid>
+  );
 };
 
 export default AboutPage;
