@@ -7,5 +7,6 @@ export default {
   linkHoverColor: blue,
   mobileNavBackground: pink,
   navLinkHoverBorder: blue,
+  sansSerifFont: '"Yantramanav",sans-serif',
   text: black,
 };
