@@ -23,7 +23,7 @@ const MobileNavToggleContainer = styled.div`
 
 const MobileNavToggle = styled.div`
   position: absolute;
-  z-index: 2;
+  z-index: 15;
 `;
 
 const List = styled.ul`
@@ -50,6 +50,7 @@ const MobileList = styled.ul`
   list-style-type: none;
   text-align: center;
   font-size: ${rem('26px')};
+  z-index: 10;
 `;
 
 const ListItem = styled.li`
@@ -101,7 +102,12 @@ class NavBar extends Component {
             <List>
               {_.map(items, (item, key) => (
                 <ListItem key={key}>
-                  <TextLink to={key} text={item} />
+                  <TextLink
+                    to={key}
+                    text={item}
+                    underline={false}
+                    withHover={false}
+                  />
                 </ListItem>
               ))}
             </List>
@@ -117,7 +123,12 @@ class NavBar extends Component {
             <MobileList>
               {_.map(items, (item, key) => (
                 <MobileListItem key={key}>
-                  <TextLink to={key} text={item} />
+                  <TextLink
+                    to={key}
+                    text={item}
+                    underline={false}
+                    withHover={false}
+                  />
                 </MobileListItem>
               ))}
             </MobileList>

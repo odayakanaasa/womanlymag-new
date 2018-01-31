@@ -1,9 +1,10 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { injectGlobal, ThemeProvider } from 'styled-components';
+import styled, { injectGlobal, ThemeProvider } from 'styled-components';
 import styledNormalize from 'styled-normalize';
 import { Grid, Cell } from 'styled-css-grid';
 /* eslint-disable import/no-unresolved */
+import { Default, Mobile } from 'components/responsive';
 import NavBar from 'components/navbar/navbar';
 import mainTheme from 'styles/mainTheme';
 /* eslint-enable import/no-unresolved */
@@ -11,10 +12,14 @@ import mainTheme from 'styles/mainTheme';
 injectGlobal`
   ${styledNormalize}
 
-  html, body, * {
+  html, body {
     font-family: 'Yantramanav', sans-serif;
     font-size: 100%;
   }
+`;
+
+const MobileNavContainer = styled(Grid)`
+  height: 0;
 `;
 
 const TemplateWrapper = ({ children }) => (
@@ -35,14 +40,28 @@ const TemplateWrapper = ({ children }) => (
     />
     <ThemeProvider theme={mainTheme}>
       <div>
-        <Grid columns={12}>
-          <Cell />
-          <Cell width={10}>
-            <NavBar />
-            {children()}
-          </Cell>
-          <Cell />
-        </Grid>
+        <Mobile>
+          <MobileNavContainer columns={12}>
+            <Cell />
+            <Cell width={10}>
+              <NavBar />
+            </Cell>
+            <Cell />
+          </MobileNavContainer>
+          <Grid columns={12}>
+            <Cell width={12}>{children()}</Cell>
+          </Grid>
+        </Mobile>
+        <Default>
+          <Grid columns={12}>
+            <Cell />
+            <Cell width={10}>
+              <NavBar />
+              {children()}
+            </Cell>
+            <Cell />
+          </Grid>
+        </Default>
       </div>
     </ThemeProvider>
   </div>

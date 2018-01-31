@@ -1,6 +1,11 @@
+const pink = '#EECFCE';
+const blue = '#80B2BF';
+const black = '#000';
+
 export default {
-  accent: '#EECFCE', // pink
-  text: '#000', // black
-  navLinkHoverBorder: '#80B2BF', // blue
-  mobileNavBackground: '#EECFCE',
+  accent: pink,
+  linkHoverColor: blue,
+  mobileNavBackground: pink,
+  navLinkHoverBorder: blue,
+  text: black,
 };
