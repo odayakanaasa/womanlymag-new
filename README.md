@@ -1,7 +1,7 @@
 # Womanly Mag
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/rfarine/womanlymag-new.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/rfarine/womanlymag-new.svg?branch=master)](https://travis-ci.org/rfarine/womanlymag-new)
+
+[![Build Status](https://travis-ci.org/WomanlyMag/womanlymag-new.svg?branch=master)](https://travis-ci.org/WomanlyMag/womanlymag-new)
 
 ## Setup
 
