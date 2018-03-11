@@ -1,7 +1,5 @@
 require('dotenv-safe').config();
 
-const isProduction = process.env.NODE_ENV === 'production';
-
 module.exports = {
   siteMetadata: {
     title: 'Womanly Mag',
@@ -16,7 +14,9 @@ module.exports = {
       options: {
         spaceId: `${process.env.CONTENTFUL_SPACE_ID}`,
         accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
-        host: !isProduction ? 'preview.contentful.com' : 'cdn.contentful.com',
+        host: `${process.env.CONTENTFUL_PREVIEW}`
+          ? 'preview.contentful.com'
+          : 'cdn.contentful.com',
       },
     },
     {

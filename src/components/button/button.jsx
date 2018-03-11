@@ -11,16 +11,20 @@ const StyledButton = styled.button`
   border: 0;
   font-family: ${props => props.theme.sansSerifFont};
   display: flex;
-  flex-grow: 1;
   &:hover {
     background-color: ${props => props.theme.accent};
+    cursor: pointer;
   }
 `;
 
-const Button = ({ onClick, text }) => (
-  <StyledButton onClick={onClick} type="button">
+const Button = ({ onClick, text, type }) => (
+  <StyledButton onClick={onClick} type={type}>
     {text}
   </StyledButton>
 );
+
+Button.defaultProps = {
+  type: 'submit',
+};
 
 export default Button;

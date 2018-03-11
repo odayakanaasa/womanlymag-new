@@ -9,6 +9,10 @@ const Promise = require('bluebird');
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+exports.onPreBootstrap = () => {
+  require('isomorphic-fetch');
+};
+
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
 

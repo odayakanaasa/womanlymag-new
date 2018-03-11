@@ -19,7 +19,12 @@ const StyledExternalLink = StyledLink.withComponent('a');
 const TextLink = ({ external, text, to, underline, withHover }) => {
   if (external) {
     return (
-      <StyledExternalLink href={to} underline={underline} withHover={withHover}>
+      <StyledExternalLink
+        href={to}
+        target="_blank"
+        underline={underline}
+        withHover={withHover}
+      >
         {text}
       </StyledExternalLink>
     );

@@ -4,7 +4,10 @@ import styled from 'styled-components';
 import { Grid, Cell } from 'styled-css-grid';
 import { rem } from 'polished';
 /* eslint-disable import/no-unresolved */
+import Button from 'components/button/button';
+import { Form, Input, TextArea } from 'components/forms';
 import Image from 'components/image/image';
+import { isEmail, isRequired } from 'components/forms/validations';
 import { List, ListItem } from 'components/list';
 import TextLink from 'components/textLink/textLink';
 /* eslint-enable import/no-unresolved */
@@ -33,8 +36,8 @@ const formatContributorInfo = contributor => (
       />
       {contributor.socialMediaLinks && (
         <List inline>
-          {_.map(contributor.socialMediaLinks, link => (
-            <ListItem>
+          {_.map(contributor.socialMediaLinks, (link, id) => (
+            <ListItem key={id}>
               <TextLink external to={link.url} text={link.type} underline />
             </ListItem>
           ))}
@@ -60,8 +63,49 @@ const AboutPage = ({ data }) => {
             __html: text.content.childMarkdownRemark.html,
           }}
         />
+        Putting this here for now: <br />
+        <Form name="subscribe" successText="You subscribed!">
+          <Input
+            addOn={<Button text="Subscribe" />}
+            label={{ text: 'Subscribe to our newsletter!' }}
+            name="email"
+            placeholder="example@email.com"
+            validate={isEmail}
+            required
+          />
+        </Form>
       </Cell>
-      <Cell area="form">Form</Cell>
+      <Cell area="form">
+        <Form
+          name="contact"
+          successText="Thanks! We'll be reaching out shortly."
+          isNetlifyForm
+        >
+          <Input
+            label={{ text: 'Name' }}
+            name="name"
+            placeholder="Name"
+            validate={isRequired}
+            required
+          />
+          <Input
+            label={{ text: 'Email' }}
+            name="email"
+            placeholder="example@email.com"
+            type="email"
+            validate={isEmail}
+            required
+          />
+          <TextArea
+            label={{ text: 'Comments' }}
+            name="comments"
+            placeholder="Comments"
+            validate={isRequired}
+            required
+          />
+          <Button text="Contact Us" />
+        </Form>
+      </Cell>
       <Cell area="bios">
         <h2>{contributorsList.title}</h2>
         <List>
