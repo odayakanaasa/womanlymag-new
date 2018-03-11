@@ -5,12 +5,14 @@ import { rem } from 'polished';
 import { StyledInput } from './input';
 import FormField from './formField';
 
-const StyledTextArea = StyledInput.extend`
+const styles = StyledInput.extend`
   resize: none;
   padding: ${rem('15px')} ${rem('10px')};
 `;
 
-const TextArea = ({ label, name, required, validate }) => (
+const StyledTextArea = styles.withComponent('textarea');
+
+const TextArea = ({ label, name, placeholder, required, validate }) => (
   <FormField
     label={label}
     name={name}
@@ -25,6 +27,7 @@ const TextArea = ({ label, name, required, validate }) => (
         }}
         onBlur={() => setTouched()}
         name={name}
+        placeholder={placeholder}
         required={required}
       />
     )}
@@ -32,6 +35,7 @@ const TextArea = ({ label, name, required, validate }) => (
 );
 
 TextArea.defaultProps = {
+  placeholder: '',
   required: false,
   validate: null,
 };
@@ -42,6 +46,7 @@ TextArea.propTypes = {
     text: PropTypes.string.isRequired,
   }).isRequired,
   name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
   required: PropTypes.bool,
   validate: PropTypes.func,
 };

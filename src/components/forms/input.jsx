@@ -12,10 +12,10 @@ export const StyledInput = styled.input`
   line-height: 1;
   padding: ${rem('8px')} ${rem('10px')};
   border: 1px solid ${props => props.theme.inputBorderColor};
-  border-color: ${props => (props.error ? props.theme.errorColor : null)};
-  ${transitions('background 0.25s ease-in-out')};
   border-right: ${props =>
     props.addOn ? '0px' : `1px solid ${props.theme.inputBorderColor}`};
+  border-color: ${props => (props.error ? props.theme.errorColor : null)};
+  ${transitions('background 0.25s ease-in-out')};
 
   &:focus {
     outline: 0;
@@ -26,7 +26,7 @@ export const StyledInput = styled.input`
   }
 `;
 
-const Input = ({ addOn, label, name, required, validate }) => (
+const Input = ({ addOn, label, name, placeholder, required, validate }) => (
   <FormField
     addOn={addOn}
     label={label}
@@ -42,6 +42,7 @@ const Input = ({ addOn, label, name, required, validate }) => (
           setValue(e.target.value);
         }}
         onBlur={() => setTouched()}
+        placeholder={placeholder}
         name={name}
         required={required}
       />
@@ -51,6 +52,7 @@ const Input = ({ addOn, label, name, required, validate }) => (
 
 Input.defaultProps = {
   addOn: null,
+  placeholder: '',
   required: false,
   validate: null,
 };
@@ -62,6 +64,7 @@ Input.propTypes = {
     text: PropTypes.string.isRequired,
   }).isRequired,
   name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
   required: PropTypes.bool,
   validate: PropTypes.func,
 };
