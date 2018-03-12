@@ -6,6 +6,7 @@ import GatsbyImage from 'gatsby-image';
 
 const ImageContainer = styled.div`
   display: ${props => (props.caption ? 'flex' : 'block')};
+  flex-flow: row wrap;
   align-items: center;
 `;
 

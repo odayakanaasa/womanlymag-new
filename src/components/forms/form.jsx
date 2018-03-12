@@ -2,9 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
 import { Form as ReactForm } from 'react-form';
+import styled from 'styled-components';
 /* eslint-disable import/no-unresolved */
 import ErrorMessage from 'components/forms/errorMessage';
 /* eslint-enable import/no-unresolved */
+
+const SuccessText = styled.div`
+  text-align: center;
+  font-size: 125%;
+`;
 
 class Form extends Component {
   state = {
@@ -47,7 +53,7 @@ class Form extends Component {
     return (
       <React.Fragment>
         {this.state.error && <ErrorMessage text={this.state.error} />}
-        {this.state.submitted && <div>{successText}</div>}
+        {this.state.submitted && <SuccessText>{successText}</SuccessText>}
         {!this.state.submitted && (
           <ReactForm onSubmit={this.handleSubmit}>
             {formApi => (

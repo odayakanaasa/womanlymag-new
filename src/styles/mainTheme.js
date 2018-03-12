@@ -14,6 +14,7 @@ export default {
   errorColor: red,
   labelColor: transparentize(0.25, black),
   linkHoverColor: blue,
+  mobileMax: '767px',
   mobileNavBackground: pink,
   navLinkHoverBorder: blue,
   sansSerifFont: '"Yantramanav",sans-serif',
