@@ -16,6 +16,10 @@ injectGlobal`
     font-family: 'Yantramanav', sans-serif;
     font-size: 100%;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+  }
 `;
 
 const MobileNavContainer = styled(Grid)`

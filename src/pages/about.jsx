@@ -5,10 +5,12 @@ import { Grid, Cell } from 'styled-css-grid';
 import { rem } from 'polished';
 /* eslint-disable import/no-unresolved */
 import Button from 'components/button/button';
+import { Default, Mobile } from 'components/responsive';
 import { Form, Input, TextArea } from 'components/forms';
 import Image from 'components/image/image';
 import { isEmail, isRequired } from 'components/forms/validations';
 import { List, ListItem } from 'components/list';
+import Paragraph from 'components/typography/paragraph';
 import TextLink from 'components/textLink/textLink';
 /* eslint-enable import/no-unresolved */
 
@@ -29,11 +31,13 @@ const formatContributorInfo = contributor => (
       <span>({contributor.title})</span>
     </ContributorHeading>
     <div>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: contributor.bio.childMarkdownRemark.html,
-        }}
-      />
+      <Paragraph>
+        <span
+          dangerouslySetInnerHTML={{
+            __html: contributor.bio.childMarkdownRemark.html,
+          }}
+        />
+      </Paragraph>
       {contributor.socialMediaLinks && (
         <List inline>
           {_.map(contributor.socialMediaLinks, (link, id) => (
@@ -54,26 +58,17 @@ const AboutPage = ({ data }) => {
     el => el.__typename === 'ContentfulList'
   );
 
-  return (
-    <Grid columns="2fr 1fr" areas={['text form form', 'bios bios bios']}>
+  const content = (
+    <React.Fragment>
       <Cell area="text">
         <h1>{usNode.title}</h1>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: text.content.childMarkdownRemark.html,
-          }}
-        />
-        Putting this here for now: <br />
-        <Form name="subscribe" successText="You subscribed!">
-          <Input
-            addOn={<Button text="Subscribe" />}
-            label={{ text: 'Subscribe to our newsletter!' }}
-            name="email"
-            placeholder="example@email.com"
-            validate={isEmail}
-            required
+        <Paragraph isLarge>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: text.content.childMarkdownRemark.html,
+            }}
           />
-        </Form>
+        </Paragraph>
       </Cell>
       <Cell area="form">
         <Form
@@ -123,7 +118,25 @@ const AboutPage = ({ data }) => {
           ))}
         </List>
       </Cell>
-    </Grid>
+    </React.Fragment>
+  );
+
+  return (
+    <React.Fragment>
+      <Mobile>
+        <Grid
+          columns="repeat(auto-fit,minmax(120px,1fr))"
+          areas={['text', 'form', 'bios']}
+        >
+          {content}
+        </Grid>
+      </Mobile>
+      <Default>
+        <Grid columns="2fr 1fr" areas={['text form form', 'bios bios bios']}>
+          {content}
+        </Grid>
+      </Default>
+    </React.Fragment>
   );
 };
 

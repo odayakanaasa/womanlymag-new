@@ -1,9 +1,9 @@
 import { transparentize } from 'polished';
 
-const blue = '#80B2BF';
+const blue = '#8fc3e9';
 const black = '#000';
 const pink = '#EECFCE';
-const red = '#D4533B';
+const red = '#f26a5c';
 const orange = '#D46A43';
 
 export default {
